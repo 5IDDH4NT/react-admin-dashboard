@@ -12,6 +12,10 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import FlightLandIcon from '@mui/icons-material/FlightLand';
+import AirlineSeatReclineExtraTwoToneIcon from '@mui/icons-material/AirlineSeatReclineExtraTwoTone';
+import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -21,7 +25,7 @@ const Dashboard = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="AIRCRASH INSIGHT" />
 
         <Box>
           <Button
@@ -55,12 +59,11 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
+            title="5,269"
+            subtitle="Total Crashes"
+            progress="1.00"
             icon={
-              <EmailIcon
+              <FlightLandIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -74,12 +77,12 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
+            title="1,44,551"
+            subtitle="Total Aboard"
+            progress="1.00"
+            increase="100%"
             icon={
-              <PointOfSaleIcon
+              <AirlineSeatReclineExtraTwoToneIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -93,12 +96,12 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
+            title="1,05,479"
+            subtitle="Total Fatalities"
+            progress="0.73"
+            increase="73%"
             icon={
-              <PersonAddIcon
+              <HeartBrokenIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -112,12 +115,12 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="1,325,134"
-            subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
+            title="39,072"
+            subtitle="Total Survivor"
+            progress="0.27"
+            increase="27%"
             icon={
-              <TrafficIcon
+              <FavoriteIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -143,21 +146,19 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Revenue Generated
+                Airline Crashes due to various reason 
               </Typography>
               <Typography
                 variant="h3"
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                1908-2017
               </Typography>
             </Box>
             <Box>
               <IconButton>
-                <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-                />
+                
               </IconButton>
             </Box>
           </Box>
@@ -180,7 +181,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Top 10 Crashes by Types
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -205,13 +206,7 @@ const Dashboard = () => {
                 </Typography>
               </Box>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
-              <Box
-                backgroundColor={colors.greenAccent[500]}
-                p="5px 10px"
-                borderRadius="4px"
-              >
-                ${transaction.cost}
-              </Box>
+              
             </Box>
           ))}
         </Box>
